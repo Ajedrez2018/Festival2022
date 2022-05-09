@@ -1,0 +1,268 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+}
+
+body{
+	background-image: url("../images/festival-fondo.webp");
+	display: flex;
+	flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	color: #fff;
+}
+
+.img-logo {
+	width: 200px;
+	height: 150px;
+}
+
+.img-size-50 {
+	width: 50em;
+	height: 50em;
+}
+
+.font-size-30 {
+	font-size: 30px;
+}
+
+.font-color-white {
+	color: var(--bs-white);
+}
+
+.small-text{
+	font-size: 1em;
+}
+
+.medium-text{
+	font-size: 3em;
+}
+
+.large-text{
+	font-size: 4em;
+}
+
+.header{
+	display:flex;
+	flex-direction: column;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 1em;
+
+	.header__logo{
+		display: flex;
+		align-items: center;
+	}
+
+	.flex-container {
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+@supports (display:grid) {
+	//PORTADA PC
+	.star_performances{
+		grid-column: 1/13;
+		grid-row: 1/25;
+		background: rgba(255,255,255,0);
+	}
+
+	.shows__title{
+		grid-column: 1 / 13;
+		grid-row: 26 / 27;
+	}
+
+	.star_performances{
+		display:grid;
+		grid-template-areas: 'one two';
+		align-items: start;
+
+		.img_artist_one, .img_artist_two{
+			clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+		}
+
+		.performances{
+			text-align: center;
+		}
+	}
+
+	.shows{
+		grid-column: 1 / 13;
+		grid-row: 30 /40 ;
+	}
+
+	.shows{
+		display: grid;
+		grid-template-columns: repeat(4, 3fr);
+		grid-template-rows: repeat(20, 20px);
+		grid-template-areas: 'one two three four';
+		text-align: center;
+
+		.desc_show_one{
+			grid-area: one;
+		}
+
+		.desc_show_two{
+			grid-area: two;
+		}
+
+		.desc_show_three{
+			grid-area: three;
+		}
+
+		.desc_show_four{
+			grid-area: four;
+		}
+
+		.show__name a{
+			color:#fff;
+			text-decoration: none;
+		}
+	}
+
+	//historia del festival
+
+	.festival__history{
+		background: rgba(255, 255, 255, 0);
+		grid-column: 2 / 12;
+		grid-row:2/45;
+		padding:.1em;
+
+		.content-history{
+			padding: 2em;
+		}
+
+		h2{
+			margin: 1em;
+			color: #212121;
+		}
+
+		.history-container{
+			display: flex;
+		}
+	}
+
+	//contacto
+	.festival__entrances{
+		background: rgba(255, 255, 255,0);
+		grid-column:2 / 12;
+		grid-row:2/35;
+		padding:1em;
+
+		h2{
+			color:#212121;
+		}
+	}
+
+	.footer-text{
+		grid-row: 41 / 48;
+		grid-column: 1/13;
+		display:none;
+	}
+
+	//page artistas
+	.festival__artists{
+		background: rgba(255,255,255,0);
+		grid-column: 2/12;
+		grid-row: 1/70;
+		padding:2em;
+		.content-artist{
+			display:flex;
+			align-items: center;				
+		}
+	}
+}
+	//Tablets styles
+	@media  only screen and (min-width: 641px) and (max-width: 992px){
+		.header__logo {
+			display: flex;
+			flex-direction: row-reverse;
+			img {
+				width: 150px;
+				height: 100px;
+			}
+			h1 {
+				font-size: 2em;
+			}
+		}
+		.f-description {
+			font-size: .4em;
+		}
+		
+		.flex-container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.festival>h3,
+		.header>h3,
+		.performances>p,
+		.performances > h3,
+		.shows>div>p,
+		.shows>div>h3 
+		{
+			font-size: 2em;
+		}
+
+		.content-history>p,
+		.festival__entrances>p,
+		.content-artist>div>h3,
+		.content-artist>div>p {
+			font-size: 1.1em;
+		}
+	}
+	
+	//mobile styles
+	@media only screen and (max-width:640px){
+		.header__logo {
+			display: flex;
+			flex-direction: row-reverse;
+			img {
+				width: 100px;
+				height: 66px;
+			}
+			h1 {
+				font-size: 1em;
+			}
+		}
+		.f-description {
+			font-size: .2em;
+		}
+
+		.content-history>p,
+		.content-artist>div>h3,
+		.festival__entrances>p,
+		.content-artist>div>p {
+			font-size: .5em;
+		}
+
+		.flex-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.festival>h3,
+		.header>h3,
+		.performances>p,
+		.performances > h3,
+		.shows>div>p,
+		.shows>div>h3 {
+			font-size: 1em;
+		}
+
+		section>div,
+		.star_performances,
+		.history-container,
+		.shows {
+			display: flex;
+		flex-direction: column;
+	}
+}

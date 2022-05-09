@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Invitaciones</title>
+		<link rel="stylesheet" href="assets/css/main.css"/>
+	</head>
+	<body>
+		<header class="header">
+			<div class="header__logo">
+				<img src="assets/images/logo.png" alt="" class="px-3 mx-3">
+				<h1 class="large-text text-center">Festival de Música Popular 2022</h1>
+			</div>
+			<div class="f-description">
+				<p class="large-text text-center">25 de Mayo</p>
+				<p class="large-text text-center">Polideportivo Municipal</p>
+		</div>
+		<div class="flex-container">
+			<a href="index.html"><button type="button" class="btn btn-primary btn-lg m-3">Portada</button></a>
+			<a href="historia.html"><button type="button" class="btn btn-primary btn-lg m-3">Historia del Festival</button></a> 
+			<a href="artistas.html"><button type="button" class="btn btn-primary btn-lg m-3">Artistas de 2022</button></a> 
+			<a href="contacto.html"><button type="button" class="btn btn-primary btn-lg m-3" disabled>Invitaciones</button></a> 
+			</div>
+				<h3 class="text-center mt-5 medium-text">Pedir invitaciones</h3>
+		</header>
+		<main class="festival">
+			<section class="festival__entrances">
+				<p class="font-size-30">Desde este formulario vas a podernos solicitar el número de invitaciones que necesitas, hasta un máximo de 4 por persona. <br> Debes rellenar todos los campos y las invitaciones se te enviaran al correo electrónico que nos facilites. <br> Si no las recibes en 2 ó 3 días reclamalas en el teléfono 123456789. <br> Solo podrás solicitar para una actuación, por lo que, si deseas asistir a más de una deberas rellenar varias veces el formulario</p>
+				<div class="font-color-white">
+					<form class="row g-3" data-netlify="true" >
+						<input type="hidden" name="bot-field">
+						<div class="col-md-6">
+							<label for="name" class="form-label">Nombre</label>
+							<input type="text" class="form-control" id="name" placeholder="Aquí tu nombre">
+						</div>
+						<div class="col-md-6">
+							<label for="lastname" class="form-label">Apellidos</label>
+							<input type="text" class="form-control" id="lastname" placeholder="Aquí tus apellidos">
+						</div>
+						<div class="col-md-6">
+							<label for="email" class="form-label">Correo electrónico</label>
+							<input type="email" class="form-control" id="email" placeholder="Tu email, donde recibir las invitaciones">
+						</div>
+						<div class="col-md-6">
+							<label for="phone" class="form-label">Teléfono</label>
+							<input type="text" class="form-control" id="phone" placeholder="Tu teléfono solo para caso de incidencia">
+						</div>
+						<div class="col-md-6">
+							<label for="dataListOptions" class="form-label">¿Para que actuación quiere la invitación?</label>
+							<input class="form-control" list="datalistOptions" id="shows" placeholder="Selecciona en la flecha de la derecha">
+							<datalist id="datalistOptions">
+								<option value="1">Violonchelo</option>
+								<option value="2">Saxofón</option>
+								<option value="3">Danza</option>
+								<option value="4">Acordeón</option>
+								<option value="5">Actuacion estelar</option>
+								<option value="6">DiscoNoche</option>
+							</datalist>
+						</div>
+						<div class="col-md-6">
+							<label for="dataListNumbers" class="form-label">¿Cuantas invitaciones desea (máx: 4 por actuación)?</label>
+							<input class="form-control" list="dataListNumbers" id="booking" placeholder="Escribe un numero o selecciona en la flecha de la derecha">
+							<datalist id="dataListNumbers">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</datalist>
+						</div>
+						<div class="col-12">
+							<button type="submit" class="btn btn-primary">Enviar solicitud</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
